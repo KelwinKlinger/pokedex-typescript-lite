@@ -41,7 +41,7 @@ src/
 Clone o repositório e entre na pasta do projeto:
 
 ```bash
-git clone URL_DO_REPOSITORIO
+git clone https://github.com/KelwinKlinger/pokedex-typescript-lite.git
 cd pokedex-typescript-lite
 ```
 
