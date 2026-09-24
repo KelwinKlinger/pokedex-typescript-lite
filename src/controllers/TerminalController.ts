@@ -13,6 +13,7 @@ export class TerminalController {
 
     await this.buscarEAdicionar("pikachu");
     await this.exibirCatalogo();
+
     await this.removerPokemon(25);
     await this.exibirCatalogo();
   }
