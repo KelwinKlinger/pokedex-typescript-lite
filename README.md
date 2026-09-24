@@ -87,6 +87,12 @@ pc_box.json
 - `Pokemon`: define o formato dos dados;
 - `textFormatters`: formata os Pokémon para exibição.
 
+## Planejamento
+
+O desenvolvimento do projeto foi organizado em um quadro Kanban no GitHub Projects:
+
+[Visualizar quadro Kanban](https://github.com/users/KelwinKlinger/projects/1/views/1)
+
 ## Autor
 
 Kelwin Klinger
