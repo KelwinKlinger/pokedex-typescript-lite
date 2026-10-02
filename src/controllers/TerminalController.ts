@@ -11,10 +11,34 @@ export class TerminalController {
   async executar(): Promise<void> {
     console.log("=== Pokédex TypeScript Lite ===");
 
+    console.log("\n1. Busca válida e adição:");
     await this.buscarEAdicionar("pikachu");
+
+    console.log("\n2. Tentativa de duplicidade:");
+    try {
+      await this.buscarEAdicionar("pikachu");
+    } catch (erro) {
+      if (erro instanceof Error) {
+        console.error(erro.message);
+      }
+    }
+
+    console.log("\n3. Busca inválida:");
+    try {
+      await this.buscarEAdicionar("pokemon-inexistente");
+    } catch (erro) {
+      if (erro instanceof Error) {
+        console.error(erro.message);
+      }
+    }
+
+    console.log("\n4. Listagem do catálogo:");
     await this.exibirCatalogo();
 
+    console.log("\n5. Remoção:");
     await this.removerPokemon(25);
+
+    console.log("\n6. Listagem após a remoção:");
     await this.exibirCatalogo();
   }
 
