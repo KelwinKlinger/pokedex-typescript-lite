@@ -1,6 +1,10 @@
 # Pokédex TypeScript Lite
 
-Mini-projeto desenvolvido em Node.js e TypeScript para consultar Pokémon na PokeAPI e gerenciar uma coleção local.
+Mini-projeto desenvolvido em Node.js e TypeScript para consultar Pokémon na PokeAPI e gerenciar uma coleção local persistida em arquivo JSON.
+
+## Objetivo
+
+Aplicar conceitos de TypeScript, programação orientada a objetos, consumo de API, programação assíncrona, tratamento de erros, manipulação de arrays e persistência de dados em um projeto executado pelo terminal.
 
 ## Funcionalidades
 
@@ -19,6 +23,14 @@ Mini-projeto desenvolvido em Node.js e TypeScript para consultar Pokémon na Pok
 - TSX
 - PokeAPI
 - Git e GitHub
+
+## Pré-requisitos
+
+Para executar o projeto, é necessário ter instalado:
+
+- Node.js;
+- NPM;
+- Git.
 
 ## Estrutura do projeto
 
@@ -71,25 +83,114 @@ Para compilar o TypeScript:
 npm run build
 ```
 
+## Exemplos de execução
+
+### Busca válida
+
+O programa busca o Pikachu na PokeAPI e o adiciona ao catálogo:
+
+```text
+1. Busca válida e adição:
+pikachu foi adicionado à coleção.
+```
+
+### Tentativa de duplicidade
+
+Ao tentar adicionar o mesmo Pokémon novamente:
+
+```text
+2. Tentativa de duplicidade:
+Este Pokémon já está na coleção.
+```
+
+### Busca inválida
+
+Ao buscar um Pokémon inexistente:
+
+```text
+3. Busca inválida:
+Pokémon não encontrado.
+```
+
+### Listagem
+
+```text
+4. Listagem do catálogo:
+Catálogo atual:
+#25 - pikachu | Tipos: electric | Altura: 4 | Peso: 60
+```
+
+### Remoção
+
+```text
+5. Remoção:
+Pokémon com ID 25 foi removido da coleção.
+```
+
+Depois da remoção:
+
+```text
+6. Listagem após a remoção:
+Catálogo vazio.
+```
+
 ## Armazenamento
 
-Os Pokémon adicionados são armazenados no arquivo:
+Os Pokémon adicionados são armazenados localmente no arquivo:
 
 ```text
 pc_box.json
 ```
 
+A aplicação lê e atualiza esse arquivo durante as operações de adição, listagem e remoção.
+
 ## Organização do código
 
-- `PokeApiService`: consulta a PokeAPI;
-- `BoxService`: gerencia o catálogo local;
-- `TerminalController`: coordena as operações do programa;
-- `Pokemon`: define o formato dos dados;
-- `textFormatters`: formata os Pokémon para exibição.
+- `PokeApiService`: consulta a PokeAPI e converte a resposta para o formato utilizado pela aplicação;
+- `BoxService`: gerencia o catálogo armazenado no arquivo JSON;
+- `TerminalController`: coordena e demonstra as operações do programa;
+- `Pokemon`: define o formato dos dados de um Pokémon;
+- `textFormatters`: formata os Pokémon para exibição no terminal;
+- `main.ts`: cria as instâncias e inicia a aplicação.
+
+## Conceitos aplicados
+
+- Tipagem com TypeScript;
+- Interfaces;
+- Classes e objetos;
+- Construtores;
+- Modificadores de acesso;
+- Métodos;
+- Arrays e métodos `map`, `some`, `forEach` e `filter`;
+- Funções assíncronas;
+- `Promise`, `async` e `await`;
+- Consumo de API com `fetch`;
+- Tratamento de erros com `throw`, `try` e `catch`;
+- Leitura e escrita de arquivos;
+- Persistência de dados em JSON;
+- Separação de responsabilidades.
+
+## Branches utilizadas
+
+- `main`: versão estável e final do projeto;
+- `develop`: integração das funcionalidades;
+- `feature/model-pokemon`: criação do modelo de Pokémon;
+- `feat/pokedex`: implementação das funcionalidades principais;
+- `docs/readme`: criação e atualização da documentação;
+- `fix/revisao-final`: correções realizadas durante a revisão final.
+
+## Melhorias futuras
+
+- Criar um menu interativo no terminal;
+- Permitir que o usuário escolha o Pokémon durante a execução;
+- Criar testes automatizados;
+- Validar entradas informadas pelo usuário;
+- Implementar novas formas de busca e filtragem;
+- Utilizar um banco de dados no lugar do arquivo JSON.
 
 ## Planejamento
 
-O desenvolvimento do projeto foi organizado em um quadro Kanban no GitHub Projects:
+O desenvolvimento foi organizado em um quadro Kanban no GitHub Projects:
 
 [Visualizar quadro Kanban](https://github.com/users/KelwinKlinger/projects/1/views/1)
 
